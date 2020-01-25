@@ -3,13 +3,11 @@ class toRoman:
     def convertNum(num):
         # Check if input is an integer
         if not isinstance(num, int):
-            # raise TypeError('"' + str(num) + '" is not a valid input. Input an integer between 1 and 3999.')
-            return -1
+            raise TypeError(f'"{num}" is not a valid input. Input an integer between 1 and 3999.')
 
         # Check if input is within the allowed range
         if num > 3999 or num < 1:
-            # raise ValueError('Number "' + str(num) + '" is out of range. Input an integer between 1 and 3999.')
-            return -2
+            raise ValueError(f'Number "{num}" is out of range. Input an integer between 1 and 3999.')
 
         # The max allowed number to be converted is 3999
         numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000] 
@@ -29,9 +27,6 @@ class toRoman:
 
         return romanStr
 
-def test_file1():
-    assert 1==1
-
 if __name__ == "__main__":
     # Passed Test Cases
     print(toRoman.convertNum(1))
@@ -42,4 +37,4 @@ if __name__ == "__main__":
     # Failed Test Cases
     #toRoman.convertNum(5000)
     #toRoman.convertNum(-123)
-    #toRoman.convertNum("#")
+    toRoman.convertNum("#")
