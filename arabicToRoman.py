@@ -35,6 +35,7 @@ if __name__ == "__main__":
     print(toRoman.convertNum(3999))
 
     # Failed Test Cases
+    #print(toRoman.convertNum())
     #toRoman.convertNum(5000)
     #toRoman.convertNum(-123)
-    toRoman.convertNum("#")
+    #toRoman.convertNum("#")
