@@ -10,6 +10,9 @@ def test_ints():
 
 def test_incorrect_type():
     with pytest.raises(TypeError):
+        toRoman.convertNum('100')
+
+    with pytest.raises(TypeError):
         toRoman.convertNum('#')
 
     with pytest.raises(TypeError):
@@ -20,6 +23,15 @@ def test_incorrect_type():
 
     with pytest.raises(TypeError):
         toRoman.convertNum()
+    
+    with pytest.raises(TypeError):
+        toRoman.convertNum(0.64)
+
+    with pytest.raises(TypeError):
+        toRoman.convertNum(5.041)
+
+    with pytest.raises(TypeError):
+        toRoman.convertNum(-123.4)
 
 def test_incorrect_range():
     with pytest.raises(ValueError):
@@ -30,3 +42,6 @@ def test_incorrect_range():
 
     with pytest.raises(ValueError):
         toRoman.convertNum(-100)
+
+    with pytest.raises(ValueError):
+        toRoman.convertNum(10**1000)
